@@ -22,6 +22,11 @@
   
 </div>
 
+
+## Original Project:
+> https://github.com/C0C0B01/KettuXposed
+---
+
 ## Contributing
 
 This is an open-source project, you can do so without any programming.
