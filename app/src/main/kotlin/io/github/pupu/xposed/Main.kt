@@ -43,7 +43,7 @@ class Main : IXposedHookLoadPackage {
 
     fun buildLoaderJsonString(): String {
         val obj = buildJsonObject {
-            put("loaderName", "KettuXposed")
+            put("loaderName", "SaukkoXposed")
             put("loaderVersion", BuildConfig.VERSION_NAME)
 
             for (module in Modules) {
@@ -134,14 +134,14 @@ class Main : IXposedHookLoadPackage {
                     install(HttpTimeout) {
                         requestTimeoutMillis = if (bundle.exists()) 4000 else 20000
                     }
-                    install(UserAgent) { agent = "KettuXposed" }
+                    install(UserAgent) { agent = "SaukkouXposed" }
                 }
 
                 val url = 
                     if (config.customLoadUrl.enabled) config.customLoadUrl.url 
                     else "https://raw.githubusercontent.com/C0C0B01/Kettu/refs/heads/dist/kettu.min.js"
 
-                Log.e("Kettu", "Fetching JS bundle from $url")
+                Log.e("Saukko", "Fetching JS bundle from $url")
                 
                 val response: HttpResponse = client.get(url) {
                     headers { 
@@ -163,19 +163,19 @@ class Main : IXposedHookLoadPackage {
                 return@async
             } catch (e: RedirectResponseException) {
                 if (e.response.status != HttpStatusCode.NotModified) throw e
-                Log.e("Kettu", "Server responded with status code 304 - no changes to file")
+                Log.e("Saukko", "Server responded with status code 304 - no changes to file")
             } catch (e: Throwable) {
                 onActivityCreate { activity ->
                     activity.runOnUiThread {
                         Toast.makeText(
                             activity.applicationContext,
-                            "Failed to fetch JS bundle, Kettu may not load!",
+                            "Failed to fetch JS bundle, Saukko may not load!",
                             Toast.LENGTH_SHORT
                         ).show()
                     }
                 }
 
-                Log.e("Kettu", "Failed to download bundle", e)
+                Log.e("Saukko", "Failed to download bundle", e)
             }
         }
 
