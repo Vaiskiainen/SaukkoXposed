@@ -139,7 +139,7 @@ class Main : IXposedHookLoadPackage {
 
                 val url = 
                     if (config.customLoadUrl.enabled) config.customLoadUrl.url 
-                    else "https://raw.githubusercontent.com/C0C0B01/Kettu/refs/heads/dist/kettu.min.js"
+                    else "https://raw.githubusercontent.com/Vaiskiainen/Saukko/refs/heads/dist/kettu.js"
 
                 Log.e("Saukko", "Fetching JS bundle from $url")
                 
