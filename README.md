@@ -9,7 +9,7 @@
   [![Latest release](https://img.shields.io/github/v/release/Vaiskiainen/SaukkoXposed?color=3AB8BA&display_name=release&label=Latest&style=for-the-badge)](https://github.com/Vaiskiainen/SaukkoXposed/releases/latest)
   
   ---
-> ⚠️ **Caution**  
+> [!CAUTION]
 > Using Saukko is against Discord's Terms Of Service and might get your account banned.
   ---
 
